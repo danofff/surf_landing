@@ -22,7 +22,7 @@
 .slider-item__info {
     position: absolute;
     right: 80px;
-    bottom: 116px;
+    bottom: 117px;
     text-align: right;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .dots-box__name {
-    font-weight: 300px;
+    font-weight: 300;
     text-transform: capitalize;
 }
 
@@ -136,6 +136,20 @@
     }
 }
 
+.menu-btn {
+    z-index: 20;
+    position: absolute;
+    right: 37px;
+    top: 55px;
+    display: none;
+    span {
+        width: 30px;
+        height: 3px;
+        background-color: $green;
+        margin-bottom: 5px;
+    }
+}
+
 .header__date {
     font-weight: 800;
     font-size: 72px;
@@ -155,7 +169,7 @@
 }
 
 .header__location {
-    margin-top: 10px;
+    margin-top: 25px;
     display: inline-block;
     font-weight: 300;
     font-size: 12px;
@@ -233,9 +247,11 @@
     }
 }
 .serf-box {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    &__wrapper {       
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
 }
 
 .serf-box__inner {
@@ -289,11 +305,12 @@
     min-height: 635px;
     background-image: url(../img/world-map-dots.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     margin: 0 auto;
     .slick-list {
         height: 635px;
+        overflow: visible;
     }
     .slick-current {
         .slider-dots__content {
@@ -383,6 +400,7 @@
     height: 24px;
     background-color: $green;
     border-radius: 50%;
+    box-shadow: 0px 0px 35px rgba($green, 0.837777);
 }
 .slider-dots__content {
     display: none;
@@ -484,12 +502,21 @@
         margin-top: -230px;
         background-repeat: no-repeat;
         background-position: right center;
+        background-size: contain;
         .descr__head {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             span {
                 font-weight: inherit;
-                margin-right: 24px;
+                margin-right: 14px;
+            }
+            .stars-list {
+                padding-left: 10px;
+                display: flex;
+                img {
+                    display: inline-flex;
+                }
             }
         }
     }
@@ -588,6 +615,7 @@
         }
         &-content {
             display: flex;
+            flex-wrap: wrap;
             justify-content: flex-start;
             align-items: flex-end;
             flex-grow: 1;
@@ -700,10 +728,12 @@
     }
     &-inner {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     &-box {
         height: 220px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -716,6 +746,7 @@
         opacity: 0.5;
         letter-spacing: 8px;
         margin-bottom: 16px;
+        text-align: center;
     }
     &-price {
         font-size: 18px;

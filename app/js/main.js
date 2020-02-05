@@ -8,10 +8,17 @@ $(function() {
         '<img class="slider-arrows slider-arrows-right" src="img/arrows-right.svg" alt="go next">',
     asNavFor: ".slider-dotshead"
     });
+
     $(".slider-dotshead").slick({
         slidesToShow: 4,
         slidesToScroll: 4,
-        asNavFor: ".header__slider"
+        asNavFor: ".header__slider",
+        responsive: [
+            {
+                breakpoint: 961,
+                settings: 'unslick'
+            }
+        ]
     });
 
     $(".serf-slider").slick({
@@ -25,7 +32,50 @@ $(function() {
         '<img class="slider-arrows slider-arrows-left" src="img/arrows-left.svg" alt="go prev">',
         nextArrow:
         '<img class="slider-arrows slider-arrows-right" src="img/arrows-right.svg" alt="go next">',
-        asNavFor: ".slider-map"
+        asNavFor: ".slider-map",
+        responsive: [
+            {
+                breakpoint: 1210,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 841,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 661,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 661,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false
+                }
+            },
+
+        ]
     });
 
     $(".slider-map").slick({
@@ -33,7 +83,13 @@ $(function() {
         slidesToScroll: 1,
         arrows: false,
         asNavFor: ".serf-slider",
-        focusOnSelect: true
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 961,
+                settings: 'unslick'
+            }
+        ]
     });
 
     $(".holder__slider").slick({
@@ -91,5 +147,9 @@ $(function() {
 
     $('.surfboard__circle').on('click', function() {
         $(this).toggleClass('active');
+    })
+
+    $('.menu-btn').on('click', function() {
+        $('.menu').toggleClass('active');
     })
 });
