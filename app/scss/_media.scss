@@ -339,8 +339,11 @@
         left: 25px;
         top: 65px;
     }
-    .sleep .holder-slider__descr {
-        background-position: right 10px;
+    .sleep  {
+        margin-bottom: 100px;
+        .holder-slider__descr {
+            background-position: right 10px;
+        }
     }
 }
 

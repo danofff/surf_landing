@@ -1,4 +1,6 @@
 $(function() {
+    new WOW().init();
+    
     $(".header__slider").slick({
     infinite: true,
     fade: true,
